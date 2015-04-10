@@ -224,3 +224,30 @@ input.autowidth-gallery {
 	padding-left: 15px;
 	padding-right: 15px;
 }
+
+.ucp-gallery-uploadimg
+{
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 200px;
+	text-align: center;
+}
+.ucp-gallery-uploadimg img
+{
+	width: 70%;
+}
+
+.ucp-gallery-uploadsettings
+{
+	display: block;
+	position: relative;
+	padding-left: 200px;
+}
+
+.ucp-gallery-uploadsettings ~ .ucp-gallery-uploadsettings
+{
+	margin-top: 80px;
+}
