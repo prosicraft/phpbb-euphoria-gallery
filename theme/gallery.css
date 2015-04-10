@@ -208,3 +208,12 @@ input.autowidth-gallery {
 	padding-top: 5px;
 	color: #aaa;
 }
+
+.ucp-gallery-breadcrumb
+{
+	padding: 10px;
+	background-color: #f4f4f4;
+	border: 1px solid #f4f4f4;
+	border-radius: 5px;
+	color: #666;
+}

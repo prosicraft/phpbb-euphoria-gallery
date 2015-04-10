@@ -109,9 +109,19 @@
 
 <!-- IF S_MANAGE_SUBALBUMS -->
 <h2>{L_TITLE}</h2>
-<div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
-	<p><strong>{NAVIGATION}<!-- IF S_ALBUM --> [<a href="{U_EDIT}">{L_EDIT}</a> | <a href="{U_DELETE}">{L_DELETE}</a> | <a href="{U_GOTO}">{L_GOTO}</a> | <a href="{U_UPLOAD}">{L_UPLOAD_IMAGE}</a>]<!-- ENDIF --></strong></p>
+<div class="ucp-content">
+	<div class="ucp-gallery-breadcrumb">{NAVIGATION}</div>
+
+    <!-- IF S_ALBUM -->
+	<div class="btn-group small-top-margin small-bottom-margin">
+		<a href="{U_EDIT}" class="btn btn-small"><i class="fa fa-edit"></i> {L_EDIT}</a>
+		<a href="{U_DELETE}" class="btn btn-small"><i class="fa fa-trash-o"></i> {L_DELETE}</a>
+		<a href="{U_GOTO}" class="btn btn-small"><i class="fa fa-external-link"></i> {L_GOTO}</a>
+		<a href="{U_UPLOAD}" class="btn btn-small"><i class="fa fa-upload"></i> {L_UPLOAD_IMAGE}</a>
+	</div>
+	<!-- ENDIF -->
+
+	<!-- IF .album_row or U_CREATE_SUBALBUM -->
 	<ul class="topiclist">
 		<li class="header">
 			<dl class="icon">
@@ -119,6 +129,8 @@
 			</dl>
 		</li>
 	</ul>
+	<!-- ENDIF -->
+
 	<!-- IF .album_row -->
 	<ul class="topiclist cplist">
 		<!-- BEGIN album_row -->
@@ -162,7 +174,6 @@
 			</fieldset>
 		</form>
 	<!-- ENDIF -->
-	<span class="corners-bottom"><span></span></span></div>
 </div>
 <!-- ENDIF -->
 
