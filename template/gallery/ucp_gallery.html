@@ -2,11 +2,11 @@
 <!-- IF S_PERSONAL_SETTINGS -->
 <form id="ucp_gallery" method="post" action="{S_UCP_ACTION}">
 <h2>{L_TITLE}</h2>
-<div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
-		<p>{L_TITLE_EXPLAIN}</p>
+<div class="ucp-content">
+    <p>{L_TITLE_EXPLAIN}</p>
+	<div class="box small-bottom-margin">
 		<fieldset>
-		<dl>
+		<dl class="collist">
 			<dt><label for="watch_own1">{L_WATCH_OWN}:</label></dt>
 			<dd>
 				<label for="watch_own1"><input type="radio" name="watch_own" id="watch_own1" value="1"<!-- IF S_WATCH_OWN --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
@@ -33,17 +33,20 @@
 		<!-- ENDIF -->
 		<!-- EVENT gallery_ucp_settings_fieldset -->
 		</fieldset>
-
-	<span class="corners-bottom"><span></span></span></div>
-</div>
+	</div>
 
 <!-- EVENT gallery_ucp_settings_form -->
 
-	<fieldset class="submit-buttons">
-		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />&nbsp;
-		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />
-		{S_FORM_TOKEN}
+    <fieldset>
+    	{S_FORM_TOKEN}
 	</fieldset>
+	<div class="submitrow">
+		<fieldset class="btn-group">
+			<input class="btn btn-small" type="reset" id="reset" name="reset" value="{L_RESET}" />
+			<input class="btn btn-small strong" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />
+		</fieldset>
+	</div>
+</div>
 </form>
 <!-- ENDIF -->
 
@@ -165,7 +168,7 @@
 
 <!-- IF S_MANAGE_SUBSCRIPTIONS -->
 <h2>{L_TITLE}</h2>
-<div class="panel">
+<div class="ucp-content">
 	<div class="inner"><span class="corners-top"><span></span></span>
 	<p>{L_TITLE_EXPLAIN}</p>
 	<form id="ucp_gallery" method="post" action="{S_UCP_ACTION}">
@@ -239,9 +242,7 @@
 				</ul>
 				<div><a href="#" onclick="marklist('ucp_gallery', 'image_id_ary', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('ucp_gallery', 'image_id_ary', false); return false;">{L_UNMARK_ALL}</a></div>
 			<!-- ELSE -->
-				<ul class="topiclist">
-					<li><p class="notopics">{L_NO_SUBSCRIPTIONS}</p></li>
-				</ul>
+				<p class="strong medium-top-margin medium-bottom-margin">{L_NO_SUBSCRIPTIONS}</p>
 			<!-- ENDIF -->
 
 			<!-- IF PAGINATION or TOTAL_IMAGES -->
@@ -253,15 +254,16 @@
 				</ul>
 			<!-- ENDIF -->
 
-		<fieldset class="display-actions">
-			<select name="action">
-				<option value="" selected="selected">{L_CHOOSE_ACTION}</option>
-				<option value="unsubscribe">{L_UNSUBSCRIBE}</option>
-			</select>
-			<input class="button2" type="submit" value="{L_SUBMIT}" />
-		</fieldset>
+		<div class="submitrow">
+			<fieldset>
+				<select name="action">
+					<option value="" selected="selected">{L_CHOOSE_ACTION}</option>
+					<option value="unsubscribe">{L_UNSUBSCRIBE}</option>
+				</select>
+				<input class="btn btn-small" type="submit" value="{L_SUBMIT}" />
+			</fieldset>
+		</div>
 	</form>
-	<span class="corners-bottom"><span></span></span></div>
 </div>
 <!-- ENDIF -->
 
