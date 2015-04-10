@@ -67,11 +67,11 @@
 <!-- ENDIF -->
 
 <!-- IF S_CREATE_SUBALBUM || S_EDIT_SUBALBUM -->
+<h2>{L_TITLE}</h2>
 <form id="acp_gallery" method="post" action="{U_ACTION}">
-	<h2>{L_TITLE}</h2>
-	<div class="panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
-			<p>{L_TITLE_EXPLAIN}</p>
+<div class="ucp-content">
+    <p>{L_TITLE_EXPLAIN}</p>
+	<div class="box small-bottom-margin">
 			<fieldset>
 			<!-- IF not S_PERSONAL_ALBUM -->
 				<dl>
@@ -97,13 +97,17 @@
 					<label><input type="checkbox" class="radio" name="desc_parse_urls"<!-- IF S_DESC_URLS_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_URLS}</label></dd>
 			</dl>
 			</fieldset>
-		<span class="corners-bottom"><span></span></span></div>
 	</div>
-	<fieldset class="submit-buttons">
-		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />&nbsp;
-		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />
-		{S_FORM_TOKEN}
-	</fieldset>
+
+	<fieldset>{S_FORM_TOKEN}</fieldset>
+
+	<div class="submitrow">
+		<fieldset class="btn-group">
+			<input class="btn btn-small" type="reset" id="reset" name="reset" value="{L_RESET}" />&nbsp;
+			<input class="btn btn-small strong" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />
+		</fieldset>
+	</div>
+</div>
 </form>
 <!-- ENDIF -->
 
