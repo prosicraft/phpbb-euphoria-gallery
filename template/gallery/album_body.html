@@ -25,7 +25,7 @@
 <!-- ENDIF -->
 
 <!-- IF S_IS_POSTABLE and (U_UPLOAD_IMAGE or PAGINATION or TOTAL_IMAGES or (U_SLIDE_SHOW and not S_IS_BOT)) -->
-	<div class="topic-actions" <!-- IF S_HAS_SUBALBUM -->style="margin-top: 2em;"<!-- ENDIF -->>
+<div class="topic-actions" <!-- IF S_HAS_SUBALBUM -->style="margin-top: 2em;"<!-- ENDIF -->>
 
 	<!-- IF not S_IN_GALLERY_POPUP and U_UPLOAD_IMAGE -->
 		<div class="btn-group">
@@ -51,23 +51,37 @@
 		</div>
 	<!-- ENDIF -->
 
-	<!-- IF .pagination or TOTAL_IMAGES -->
-		<div class="pagination">
-			{TOTAL_IMAGES}
-			<!-- IF .pagination -->
-				 &bull; <!-- INCLUDE pagination.html -->
-			<!-- ELSE -->
-				 &bull; {PAGE_NUMBER}
+    <!-- IF .pagination or TOTAL_IMAGES -->
+	<div class="row-inline small-bottom-margin">
+		<div class="left"></div>
+		<div class="right">
+			<div class="pagination-total">{TOTAL_IMAGES} </div>
+			<!-- IF PAGE_NUMBER -->
+				<!-- IF .pagination -->
+				<div class="pagination-top">
+					<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>
+					<span class="pagination">
+					<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+						{PAGINATION}
+					<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+					</span>
+				</div>
+				<!-- ELSE -->
+					<div class="pagination-total">{PAGE_NUMBER}</div>
+				<!-- ENDIF -->
 			<!-- ENDIF -->
 		</div>
+	</div>
 	<!-- ENDIF -->
 
 	<!-- IF not S_IN_GALLERY_POPUP and S_IS_POSTABLE and U_SLIDE_SHOW and not S_IS_BOT -->
 		<div class="pagination"><a href="{U_SLIDE_SHOW}">{L_SLIDE_SHOW}</a><!-- IF PAGINATION or TOTAL_IMAGES or U_SLIDE_SHOW --> &bull;&nbsp;<!-- ENDIF --></div>
 	<!-- ENDIF -->
 
-	</div>
+</div>
 <!-- ENDIF -->
+
+<hr />
 
 <!-- IF .imageblock -->
 	<!-- IF S_IN_GALLERY_POPUP -->
@@ -86,35 +100,42 @@
 <!-- ENDIF -->
 
 <!-- IF S_IS_POSTABLE -->
+    <hr class="big-top-margin" />
+
 	<!-- IF S_SELECT_SORT_KEY or PREVIOUS_PAGE or NEXT_PAGE -->
 	<form action="{S_ALBUM_ACTION}" method="post">
-	<fieldset class="display-options">
-		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
-		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
+	<div class="row-inline">
+		<fieldset class="formgroup">
 		<!-- IF S_SELECT_SORT_KEY -->
 			<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-			<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="button2" /></label>
+			<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-small btn-min-width" /></label>
 		<!-- ENDIF -->
-	</fieldset>
+		</fieldset>
+	</div>
 	</form>
-	<hr />
 	<!-- ENDIF -->
 	<!-- IF .imageblock -->
 	<div class="topic-actions">
-		<!-- IF U_UPLOAD_IMAGE -->
-			<div class="buttons">
-				<a href="<!-- IF S_IS_LOCKED --> <!-- ELSE -->{U_UPLOAD_IMAGE}<!-- ENDIF -->" title="<!-- IF S_IS_LOCKED -->{L_ALBUM_LOCKED}<!-- ELSE -->{L_UPLOAD_IMAGE}<!-- ENDIF -->" class="button icon-button <!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->post-icon<!-- ENDIF -->"><!-- IF S_IS_LOCKED -->{L_ALBUM_LOCKED}<!-- ELSE -->{L_UPLOAD_IMAGE}<!-- ENDIF --></a>
-			</div>
-		<!-- ENDIF -->
-
 		<!-- IF .pagination or TOTAL_IMAGES -->
-		<div class="pagination">
-			{TOTAL_IMAGES}
-			<!-- IF .pagination -->
-				 &bull; <!-- INCLUDE pagination.html -->
-			<!-- ELSE -->
-				 &bull; {PAGE_NUMBER}
-			<!-- ENDIF -->
+		<div class="row-inline small-bottom-margin">
+			<div class="left"></div>
+			<div class="right">
+				<div class="pagination-total">{TOTAL_IMAGES} </div>
+				<!-- IF PAGE_NUMBER -->
+					<!-- IF .pagination -->
+					<div class="pagination-top">
+						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>
+						<span class="pagination">
+						<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+							{PAGINATION}
+						<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+						</span>
+					</div>
+					<!-- ELSE -->
+						<div class="pagination-total">{PAGE_NUMBER}</div>
+					<!-- ENDIF -->
+				<!-- ENDIF -->
+			</div>
 		</div>
 		<!-- ENDIF -->
 	</div>

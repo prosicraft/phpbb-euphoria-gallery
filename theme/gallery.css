@@ -123,8 +123,7 @@ input.autowidth-gallery {
 {
 	width: 242px;
 	background: #FFFFFF;
-	display: block;
-	float: left;
+	display: inline-block;
 	margin: 12px;
 	padding: 10px;
 	text-align: center;
