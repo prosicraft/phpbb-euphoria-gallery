@@ -197,3 +197,14 @@ input.autowidth-gallery {
 	font-size: 20px;
 	color: #111;
 }
+
+
+/* UCP */
+
+.ucp-gallery-copyright
+{
+	margin-top: 80px;
+	border-top: 1px solid #aaa;
+	padding-top: 5px;
+	color: #aaa;
+}
