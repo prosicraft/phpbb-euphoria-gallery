@@ -74,7 +74,7 @@
 <!-- ENDIF -->
 
 
-<!-- IF .pagination or TOTAL_IMAGES -->
+<!-- IF .pagination or TOTAL_ALBUMS -->
 	<div class="row-inline small-bottom-margin">
 		<div class="left"></div>
 		<div class="right">
@@ -99,9 +99,9 @@
 
 <!-- INCLUDE gallery/albumlist_polaroid.html -->
 
-<hr class="big-top-margin" />
+<!-- IF .pagination or TOTAL_ALBUMS -->
+    <hr class="big-top-margin" />
 
-<!-- IF .pagination or TOTAL_IMAGES -->
 	<div class="row-inline small-bottom-margin">
 		<div class="left"></div>
 		<div class="right">

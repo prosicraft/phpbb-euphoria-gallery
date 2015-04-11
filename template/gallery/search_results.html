@@ -24,6 +24,7 @@ function toggleElement(oElement)
 	}
 }
 </script>
+
 <h2><!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF --><!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
 <!-- IF IGNORED_WORDS --> <p>{L_IGNORED_TERMS}: <strong>{IGNORED_WORDS}</strong></p><!-- ENDIF -->
 
@@ -43,14 +44,26 @@ function toggleElement(oElement)
 		</div>
 	<!-- ENDIF -->
 
-	<!-- IF .pagination or SEARCH_MATCHES -->
-		<div class="pagination">
-			{SEARCH_MATCHES} &bull; 
-			<!-- IF .pagination -->
-				<!-- INCLUDE pagination.html -->
-			<!-- ELSE -->
-				{PAGE_NUMBER}
-			<!-- ENDIF -->
+    <!-- IF .pagination or SEARCH_MATCHES -->
+		<div class="row-inline">
+			<div class="left"></div>
+			<div class="right">
+				<div class="pagination-total">{SEARCH_MATCHES} </div>
+				<!-- IF PAGE_NUMBER -->
+					<!-- IF .pagination -->
+					<div class="pagination-top">
+						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>
+						<span class="pagination">
+						<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+							{PAGINATION}
+						<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+						</span>
+					</div>
+					<!-- ELSE -->
+						<div class="pagination-total">{PAGE_NUMBER}</div>
+					<!-- ENDIF -->
+				<!-- ENDIF -->
+			</div>
 		</div>
 	<!-- ENDIF -->
 
@@ -109,18 +122,26 @@ function toggleElement(oElement)
 <!-- ENDIF -->
 
 <!-- IF .pagination or SEARCH_MATCHES -->
-	<div class="topic-actions">
-		<div class="pagination">
-			{SEARCH_MATCHES} &bull; 
-			<!-- IF .pagination -->
-				<!-- INCLUDE pagination.html -->
-			<!-- ELSE -->
-				{PAGE_NUMBER}
+	<div class="row-inline big-bottom-margin">
+		<div class="left"></div>
+		<div class="right">
+			<div class="pagination-total">{SEARCH_MATCHES} </div>
+			<!-- IF PAGE_NUMBER -->
+				<!-- IF .pagination -->
+				<div class="pagination-top">
+					<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>
+					<span class="pagination">
+					<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+						{PAGINATION}
+					<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+					</span>
+				</div>
+				<!-- ELSE -->
+					<div class="pagination-total">{PAGE_NUMBER}</div>
+				<!-- ENDIF -->
 			<!-- ENDIF -->
 		</div>
 	</div>
-		<br>
-			<br>
 <!-- ENDIF -->
 
 <!-- INCLUDE gallery/gallery_footer.html -->
