@@ -251,3 +251,14 @@ input.autowidth-gallery {
 {
 	margin-top: 80px;
 }
+
+
+
+#message
+{
+	text-align: center;
+}
+#message > p
+{
+	font-size: 17px;
+}
