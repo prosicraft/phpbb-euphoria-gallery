@@ -130,13 +130,15 @@
 			</div>
 
             <div class="table-lastpost">
-				<a href="{U_IMAGE_ACTION}"><img src="{U_PERSONAL_GALLERIES_LAST_IMAGE}" class="lastimage" alt="" /></a>
-	            <!-- IF U_IMAGENAME -->
-	            	<i class="lastpost-topiclink"><a href="{U_IMAGENAME_ACTION}">{U_IMAGENAME}</a> </i><br />
-	                <span class="lastpost-info">{U_UPLOADER} </span>
-	                <br class="lastpost-delimiter" />
+				<div class="gallery-table-lastpost">
+					<a href="{U_IMAGE_ACTION}" class="lastimagelnk"><img src="{U_PERSONAL_GALLERIES_LAST_IMAGE}" alt="" /></a>
+		            <!-- IF U_IMAGENAME -->
+		            <i class="lastpost-topiclink"><a href="{U_IMAGENAME_ACTION}">{U_IMAGENAME}</a> </i><br />
+		            <span class="lastpost-info">{U_UPLOADER} </span>
+		            <br class="lastpost-delimiter" />
 					<span class="lastpost-time"><i class="fa fa-clock-o"></i> {U_TIME} </span>
-				<!-- ENDIF -->
+					<!-- ENDIF -->
+				</div>
 			</div>
 
 			<div class="table-status">
