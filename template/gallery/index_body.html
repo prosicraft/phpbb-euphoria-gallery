@@ -73,28 +73,54 @@
 	</div>
 <!-- ENDIF -->
 
-<!-- IF .pagination or TOTAL_ALBUMS -->
-	<div class="pagination">
-		{TOTAL_ALBUMS}
-		<!-- IF .pagination -->
-			 &bull; <!-- INCLUDE pagination.html -->
-		<!-- ELSE -->
-			 &bull; {PAGE_NUMBER}
-		<!-- ENDIF -->
+
+<!-- IF .pagination or TOTAL_IMAGES -->
+	<div class="row-inline small-bottom-margin">
+		<div class="left"></div>
+		<div class="right">
+			<div class="pagination-total">{TOTAL_ALBUMS} </div>
+			<!-- IF PAGE_NUMBER -->
+				<!-- IF .pagination -->
+				<div class="pagination-top">
+					<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>
+					<span class="pagination">
+					<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+						{PAGINATION}
+					<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+					</span>
+				</div>
+				<!-- ELSE -->
+					<div class="pagination-total">{PAGE_NUMBER}</div>
+				<!-- ENDIF -->
+			<!-- ENDIF -->
+		</div>
 	</div>
 <!-- ENDIF -->
 
 <!-- INCLUDE gallery/albumlist_polaroid.html -->
 
+<hr class="big-top-margin" />
 
-<!-- IF .pagination or TOTAL_ALBUMS -->
-	<div class="pagination">
-		{TOTAL_ALBUMS}
-		<!-- IF .pagination -->
-			 &bull; <!-- INCLUDE pagination.html -->
-		<!-- ELSE -->
-			 &bull; {PAGE_NUMBER}
-		<!-- ENDIF -->
+<!-- IF .pagination or TOTAL_IMAGES -->
+	<div class="row-inline small-bottom-margin">
+		<div class="left"></div>
+		<div class="right">
+			<div class="pagination-total">{TOTAL_ALBUMS} </div>
+			<!-- IF PAGE_NUMBER -->
+				<!-- IF .pagination -->
+				<div class="pagination-top">
+					<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>
+					<span class="pagination">
+					<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+						{PAGINATION}
+					<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+					</span>
+				</div>
+				<!-- ELSE -->
+					<div class="pagination-total">{PAGE_NUMBER}</div>
+				<!-- ENDIF -->
+			<!-- ENDIF -->
+		</div>
 	</div>
 <!-- ENDIF -->
 
