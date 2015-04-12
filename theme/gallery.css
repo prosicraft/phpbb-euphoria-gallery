@@ -301,3 +301,58 @@ input.autowidth-gallery {
 {
 	font-size: 17px;
 }
+
+
+/* viewimage */
+
+.gallery-postrow
+{
+	display: block;
+	position: relative;
+	width: 100%;
+	padding-left: 250px;
+}
+
+.gallery-postprofile
+{
+	display: block;
+	position: absolute;
+	width: 250px;
+	left: 0px;
+	top: 0px;
+	border-right: 1px solid #ddd;
+	padding-bottom: 40px;
+	padding-right: 20px;
+	padding-top: 10px;
+}
+
+.gallery-postprofile .postinfo
+{
+	display: block;
+}
+
+.gallery-postrow .postbody
+{
+	padding-left: 20px;
+}
+
+.collist.gallery-imginfo dd input[type=text]
+{
+	max-width: 600px;
+}
+
+.collist.gallery-imginfo dd input[type=text] + input[type=text]
+{
+	margin-top: 5px;
+}
+
+@media all and (max-width: 746px)
+{
+	/* overrides style from common.css */
+	.gallery-imgheading .right
+	{
+		display: inline-block;
+		position: absolute;
+		right: 0px;
+	}
+}
